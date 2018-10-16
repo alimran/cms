@@ -1,0 +1,18 @@
+@numbers: 5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100;
+@sides: {
+  t:top;
+  r:right;
+  b:bottom;
+  l:left;
+};
+each(@numbers, .(@v, @k, @i) {
+  each(@sides, .(@v2, @k2, @i2) {
+    .m-@{k2}-@{v} {
+      margin-@{v2}: unit(@v, px);
+    }
+
+    .p-@{k2}-@{v} {
+      padding-@{v2}: unit(@v, px);
+    }
+  });
+});
